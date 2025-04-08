@@ -7,7 +7,7 @@ const userAuth = async (req, res, next) => {
     if (!token) {
       return res.status(401).send("please Logged IN");
     }
-    const dataObj = await jwt.verify(token, "dsjfherfbc");
+    const dataObj = await jwt.verify(token, process.env.JWT_TOKEN);
     const { _id } = dataObj;
     const user = await User.findById(_id);
     if (!user) {

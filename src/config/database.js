@@ -1,8 +1,7 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const connectDB = async()=>{
- await mongoose.connect("mongodb+srv://gaurav:4tO242wTW1OFczkU@first.aq7u2.mongodb.net/")
-}
+const connectDB = async () => {
+  await mongoose.connect(process.env.DB_CONNECTION_SECRET);
+};
 
-module.exports = connectDB ;
-
+module.exports = connectDB;
